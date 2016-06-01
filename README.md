@@ -1,9 +1,11 @@
 Prototype of using Jquery DataTables in React Webpack architecture.
 =====================
 
-```npm install
+```
+npm install
 npm start
-open http://localhost:3000```
+open http://localhost:3000
+```
 
 
 Started from discussion here: https://gist.github.com/checkraiser/8555856
