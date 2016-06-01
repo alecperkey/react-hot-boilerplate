@@ -7,13 +7,23 @@ npm start
 open http://localhost:3000
 ```
 
+###jQuery DataTables & Webpack
 
-Started from discussion here: https://gist.github.com/checkraiser/8555856
+- https://github.com/DataTables/DataTables/issues/434#issuecomment-218863925
+- https://datatables.net/q/webpack
 
-People say it shouldn't be done since both are trying to manipulate the DOM and it can cause conflicts. They might be wrong and just don't understand React lifecycle hook methods...
+###React & jQuery DataTables
 
-Either way, Angular DataTables is much easier and more stable out of the box for working with DataTables.net .
-Still, it should be possible in React, IMO. 
-If data is constantly being edited with many rows, it will probably be a performance bottleneck for these use cases.
+- https://gist.github.com/checkraiser/8555856
 
-Forked from https://github.com/gaearon/react-hot-boilerplate as a React base. pasted that readme below:
+Note:
+
+Many have warned jQuery DataTables and React shouldn't be used together as both are trying to manipulate the DOM and it can cause conflicts. 
+
+If you understand React lifecycle hook methods & are not changing the underlying data too often (i.e. not inline editing like its Google sheets, polling async data sources etc), it might not be a problem.
+
+Still, if the underlying data is constantly being updated with many rows, it will probably be a performance bottleneck for these use cases.
+
+Angular DataTables is quite nice as an alternative.
+
+Boilerplate forked from https://github.com/gaearon/react-hot-boilerplate as a React base. pasted that readme below:
