@@ -14,13 +14,30 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+
+    new webpack.ProvidePlugin({
+      '$': "jquery",
+      'jQuery': "jquery",
+      'window.jQuery': "jquery",
+      'window.$': 'jquery'
+    })
   ],
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'src')
-    }]
+    loaders: [
+      {
+        test: /datatables\.net.*/,
+        loader: 'imports?define=>false'
+      },
+      {
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel'],
+        include: path.join(__dirname, 'src')
+      }
+    ]
   }
 };
+
+
+
+
