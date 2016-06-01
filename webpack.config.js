@@ -25,10 +25,12 @@ module.exports = {
   ],
   module: {
     loaders: [
-      {
-        test: /datatables\.net.*/,
-        loader: 'imports?define=>false'
-      },
+      // for using CJS instead of AMD (AMD is default in datatables module preferences if define is true) for datatables.net modules
+      // AMD is just fine with webpack though...
+      // {
+      //   test: /datatables\.net.*/,
+      //   loader: 'imports?define=>false'
+      // },
       {
         test: /\.js$/,
         loaders: ['react-hot', 'babel'],
