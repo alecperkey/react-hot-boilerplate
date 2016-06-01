@@ -22,12 +22,13 @@ open http://localhost:3000
 1. Get data from source in componentWillMount, & set it to the state varaible with setState
 2. Initial render(): add table markup `<table id="my-table">` using simple map function from the data in state.
 3. Initialise as jQuery DataTable in componentDidMount `$('#my-table').DataTable()`
+-- Not invoked on the server-rendering, (so SSR needs some solution. Suggestions?)
 4. Optional: componentShouldUpdate logic to determine if you do/don't want to re-render depending on differences changes in props and state.
 5. componentWillUpdate:
--- (a) persist any config which might be lost from DataTable instance (what might this be? I don't know)
+-- (a) persist any config which might be lost from DataTable instance (What might this be? Not sure yet.)
 -- (b) destroy table
 6. Re-render is called, same as step 2
-7. componentDidUpdate, initialize the new table from step 6, potentially with persisted DataTables-specific config from 5(a)
+7. componentDidUpdate, initialize the new table created in step 6, potentially with persisted DataTables-specific config from 5(a)
 8. componentWillUnmount, destroy table
 
 
