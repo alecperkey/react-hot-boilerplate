@@ -21,7 +21,7 @@ open http://localhost:3000
 
 1. Get data from source in componentWillMount, & set it to the state varaible with setState
 2. Initial render(): add table markup `<table id="my-table">` using simple map function from the data in state.
-3. Initialise datatable in componentDidMount for some `$('#my-table')`
+3. Initialise as jQuery DataTable in componentDidMount `$('#my-table').DataTable()`
 4. If state is changed, then componentShouldUpdate could have logic to determine if you do/don't want to re-render.
 5. componentWillUpdate, you can 
 -- (a) persist any config which might be lost from DataTable instance (what might this be? I don't know)
