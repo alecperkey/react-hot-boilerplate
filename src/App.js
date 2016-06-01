@@ -3,8 +3,6 @@ import $ from 'jquery';
 import 'datatables.net';
 import dt from 'datatables.net-bs';
 import buttons from 'datatables.net-buttons';
-dt(window, $);
-buttons(window, $);
 // import buttons from 'datatables.net-buttons-bs';
 
 // var $       = require( 'jquery' );
@@ -13,10 +11,26 @@ buttons(window, $);
 // dt(window, $);
 // require( 'datatables.net-buttons' )( window, $ );
 
+// required to show button.
+  window.pdfMake = true;
+//
+// var originalPdfHtml5Action = $.fn.dataTableExt.buttons.pdfHtml5.action;
+//
+// $.fn.dataTableExt.buttons.pdfHtml5.action = function pdfHtml5Action(e, dt, button, config){
+//   require.ensure(['pdfmake', 'vfs_fonts'], function _pdfHtml5Action(){
+//     require('pdfmake');
+//     require('vfs_fonts');
+//     originalPdfHtml5Action(e, dt, button, config);
+//   });
+// };
+
+
 require( 'datatables.net-buttons/js/buttons.colVis.js' )(); // Column visibility
 require( 'datatables.net-buttons/js/buttons.html5.js' )();  // HTML 5 file export
 require( 'datatables.net-buttons/js/buttons.flash.js' )();  // Flash file export
 require( 'datatables.net-buttons/js/buttons.print.js' )();  // Print view button
+dt(window, $);
+buttons(window, $);
 //
 // import 'datatables.net-buttons/js/buttons.colVis.js'; // Column visibility
 // import 'datatables.net-buttons/js/buttons.html5.js';  // HTML 5 file export
@@ -84,6 +98,10 @@ export default class App extends Component {
 
     console.log('render');
     console.log($('#dt_wrapper'));
+
+    new $.fn.dataTable.Buttons(table, {
+      buttons: [ 'colvis' ]
+    });
     // console.log($);
     // console.log(dt);
     // console.log(buttons);
