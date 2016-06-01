@@ -42,4 +42,4 @@ Still, if the underlying data is constantly being updated with many rows, it wil
 
 Angular DataTables is quite nice as an alternative.
 
-Boilerplate forked from https://github.com/gaearon/react-hot-boilerplate as a React & Webpack base. pasted that readme below:
+Boilerplate forked from https://github.com/gaearon/react-hot-boilerplate as a React & Webpack base.
