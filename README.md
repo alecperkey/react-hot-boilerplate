@@ -1,5 +1,7 @@
-Prototype of using Jquery DataTables in React Webpack architecture.
+proof of concept of using Jquery DataTables in React Webpack architecture.
 =====================
+
+*** seeking contributors for: React jQuery DataTables(https://github.com/alecperkey/react-jquery-datatables/blob/master/README.md) ***
 
 ```
 npm install
